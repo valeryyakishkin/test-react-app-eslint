@@ -7,7 +7,8 @@
     "extends": [
         "react-app",
         "react-app/jest",
-        "airbnb"
+        "airbnb",
+        "plugin:prettier/recommended"
     ],
     "overrides": [
     ],
@@ -16,7 +17,8 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "prettier"
     ],
     "rules": {
         "quotes": [
