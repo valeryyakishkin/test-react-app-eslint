@@ -1,5 +1,5 @@
 import "./App.css";
-import InputUserName from "./components/atoms/InputUsername/InputUsername";
+import TextInput from "./components/atoms/TextInput/TextInput";
 
 function App() {
   return (
@@ -12,12 +12,11 @@ function App() {
         <div className="inputs">
           <span>Username:</span>
           <br />
-          <input id="username" type="text" />
-          <InputUserName name="Boby Singer" />
+          <TextInput inputType="text" />
           <br />
           <span>Password:</span>
           <br />
-          <input type="password" />
+          <TextInput inputType="password" />
         </div>
         <div className="extra-field">
           <div>
