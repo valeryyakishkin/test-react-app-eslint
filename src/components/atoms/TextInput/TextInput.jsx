@@ -3,7 +3,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 
 /* eslint-disable import/no-extraneous-dependencies */
-export default function TextInput({ inputType }) {
+export default function TextInput({ inputType, label, id }) {
   const [text, changeText] = useState("");
 
   const changeInput = (event) => {
@@ -12,18 +12,22 @@ export default function TextInput({ inputType }) {
   };
 
   return (
-    <div>
-      <input type={inputType} onChange={changeInput} value={text} />
-    </div>
+    <label htmlFor={id}>
+      <span>{label}</span>
+      <input type={inputType} onChange={changeInput} value={text} id={id} />
+    </label>
   );
 }
 
 TextInput.propTypes = {
-  inputType: PropTypes.string,
+  inputType: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  id: PropTypes.string,
 };
 
 TextInput.defaultProps = {
-  inputType: "",
+  label: "",
+  id: "",
 };
 // export default class InputUserName extends Component {
 //   constructor() {

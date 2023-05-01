@@ -11,12 +11,9 @@ function App() {
         </div>
         <div className="inputs">
           <span>Username:</span>
-          <br />
-          <TextInput inputType="text" />
-          <br />
+          <TextInput inputType="text" label="Username:" id="username" />
           <span>Password:</span>
-          <br />
-          <TextInput inputType="password" />
+          <TextInput inputType="password" label="Password:" id="password" />
         </div>
         <div className="extra-field">
           <div>
