@@ -1,33 +1,9 @@
-#root {
-  margin: 0 auto;
+body {
+  font-size: 4em;
+  background-color: #000000;
+  color: red;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-}
-
-.form-fluid {
-  border: 1px solid black;
-  text-align: center;
-  padding: 1% 2%;
-  width: 30%;
-  height: 60%;
-}
-
-form {
-  height: 100%;
-  border: solid 1px red;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-.extra-field {
-  display: flex;
-  justify-content: space-around;
-}
-
-button {
-  width: 30%;
-  height: 200%;
 }
