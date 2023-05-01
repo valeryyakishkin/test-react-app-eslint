@@ -16,6 +16,18 @@ function App() {
     changeTextPassword(val);
   };
 
+  const onSubmit = (evt) => {
+    evt.preventDefault();
+    const reg =
+      /([a-z0-9_-]+\.)*[A-Za-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/;
+    const el = document.getElementById("username");
+    if (!reg.test(el.value)) {
+      el.style.border = "solid 2px red";
+    } else {
+      el.style.border = "solid 2px green";
+    }
+  };
+
   return (
     <div className="form-fluid">
       <form>
@@ -49,7 +61,9 @@ function App() {
         </div>
         <br />
         <div className="form-button">
-          <button type="submit">Sign In</button>
+          <button type="submit" onClick={onSubmit}>
+            Sign In
+          </button>
         </div>
       </form>
     </div>
