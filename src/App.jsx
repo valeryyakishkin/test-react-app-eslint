@@ -1,7 +1,21 @@
+import { useState } from "react";
 import "./App.css";
 import TextInput from "./components/atoms/TextInput/TextInput";
 
 function App() {
+  const [textName, changeTextName] = useState("");
+  const [textPassword, changeTextPassword] = useState("");
+
+  const handleChangeName = (event) => {
+    const val = event.target.value;
+    changeTextName(val);
+  };
+
+  const handleChangePassword = (event) => {
+    const val = event.target.value;
+    changeTextPassword(val);
+  };
+
   return (
     <div className="form-fluid">
       <form>
@@ -10,10 +24,21 @@ function App() {
           <h4>Welcome!</h4>
         </div>
         <div className="inputs">
-          <span>Username:</span>
-          <TextInput inputType="text" label="Username:" id="username" />
-          <span>Password:</span>
-          <TextInput inputType="password" label="Password:" id="password" />
+          <TextInput
+            inputType="text"
+            label="Username:"
+            id="username"
+            value={textName}
+            handleChange={handleChangeName}
+          />
+          <br />
+          <TextInput
+            inputType="password"
+            label="Password:"
+            id="password"
+            value={textPassword}
+            handleChange={handleChangePassword}
+          />
         </div>
         <div className="extra-field">
           <div>

@@ -1,20 +1,18 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { useState } from "react";
 import PropTypes from "prop-types";
 
 /* eslint-disable import/no-extraneous-dependencies */
-export default function TextInput({ inputType, label, id }) {
-  const [text, changeText] = useState("");
-
-  const changeInput = (event) => {
-    const val = event.target.value;
-    changeText(val);
-  };
-
+export default function TextInput({
+  inputType,
+  label,
+  id,
+  value,
+  handleChange,
+}) {
   return (
     <label htmlFor={id}>
       <span>{label}</span>
-      <input type={inputType} onChange={changeInput} value={text} id={id} />
+      <input type={inputType} onChange={handleChange} value={value} id={id} />
     </label>
   );
 }
@@ -23,11 +21,14 @@ TextInput.propTypes = {
   inputType: PropTypes.string.isRequired,
   label: PropTypes.string,
   id: PropTypes.string,
+  value: PropTypes.string,
+  handleChange: PropTypes.func.isRequired,
 };
 
 TextInput.defaultProps = {
   label: "",
   id: "",
+  value: "",
 };
 // export default class InputUserName extends Component {
 //   constructor() {
