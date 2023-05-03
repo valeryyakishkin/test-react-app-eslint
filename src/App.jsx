@@ -16,6 +16,15 @@ function App() {
     changeTextPassword(val);
   };
 
+  const handleChangeInputType = () => {
+    const el = document.getElementById("password");
+    if (el.type !== "password") {
+      el.type = "password";
+    } else {
+      el.type = "text";
+    }
+  };
+
   const onSubmit = (evt) => {
     evt.preventDefault();
     const reg =
@@ -51,6 +60,9 @@ function App() {
             value={textPassword}
             handleChange={handleChangePassword}
           />
+          <button onClick={handleChangeInputType} id="eye" type="button">
+            Eye
+          </button>
         </div>
         <div className="extra-field">
           <div>
@@ -61,7 +73,7 @@ function App() {
         </div>
         <br />
         <div className="form-button">
-          <button type="submit" onClick={onSubmit}>
+          <button id="submit" type="submit" onClick={onSubmit}>
             Sign In
           </button>
         </div>

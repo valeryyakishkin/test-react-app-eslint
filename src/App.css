@@ -10,7 +10,7 @@
   border: 1px solid black;
   text-align: center;
   padding: 1% 2%;
-  width: 30%;
+  width: 50%;
   height: 60%;
 }
 
@@ -22,12 +22,22 @@ form {
   justify-content: space-evenly;
 }
 
+.inputs {
+  position: relative;
+}
+
 .extra-field {
   display: flex;
   justify-content: space-around;
 }
 
-button {
+#submit {
   width: 30%;
   height: 200%;
+}
+
+#eye {
+  background-color: lightskyblue;
+  color: white;
+  font-size: 0.5em;
 }
