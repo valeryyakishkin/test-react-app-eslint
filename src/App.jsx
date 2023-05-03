@@ -27,13 +27,20 @@ function App() {
 
   const onSubmit = (evt) => {
     evt.preventDefault();
-    const reg =
+    const userReg =
       /([a-z0-9_-]+\.)*[A-Za-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/;
-    const el = document.getElementById("username");
-    if (!reg.test(el.value)) {
-      el.style.border = "solid 2px red";
+    const userEl = document.getElementById("username");
+    if (!userReg.test(userEl.value)) {
+      userEl.style.border = "solid 2px red";
     } else {
-      el.style.border = "solid 2px green";
+      userEl.style.border = "solid 2px green";
+    }
+    const passReg = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,15}$/;
+    const passEl = document.getElementById("password");
+    if (!passReg.test(passEl.value)) {
+      passEl.style.border = "solid 2px red";
+    } else {
+      passEl.style.border = "solid 2px green";
     }
   };
 
