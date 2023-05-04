@@ -27,21 +27,29 @@ function App() {
 
   const onSubmit = (evt) => {
     evt.preventDefault();
-    const userReg =
-      /([a-z0-9_-]+\.)*[A-Za-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/;
-    const userEl = document.getElementById("username");
-    if (!userReg.test(userEl.value)) {
-      userEl.style.border = "solid 2px red";
-    } else {
-      userEl.style.border = "solid 2px green";
-    }
-    const passReg = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,15}$/;
-    const passEl = document.getElementById("password");
-    if (!passReg.test(passEl.value)) {
-      passEl.style.border = "solid 2px red";
-    } else {
-      passEl.style.border = "solid 2px green";
-    }
+    // const userEl = document.getElementById("username");
+    // const inputFields = document.querySelectorAll(".pass_field");
+    // const passEl = document.getElementById("password");
+    // if (userEl.value.length < 1) {
+    //   const userError = document.createElement("p");
+    //   userError.innerHTML = "Поле обязательно для заполнения";
+    //   inputFields[0].appendChild(userError);
+    // }
+    // const userReg =
+    //   /([a-z0-9_-]+\.)*[A-Za-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/;
+    // const userEl = document.getElementById("username");
+    // if (!userReg.test(userEl.value)) {
+    //   userEl.style.border = "solid 2px red";
+    // } else {
+    //   userEl.style.border = "solid 2px green";
+    // }
+    // const passReg = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,15}$/;
+    // const passEl = document.getElementById("password");
+    // if (!passReg.test(passEl.value)) {
+    //   passEl.style.border = "solid 2px red";
+    // } else {
+    //   passEl.style.border = "solid 2px green";
+    // }
   };
 
   return (
@@ -52,24 +60,32 @@ function App() {
           <h4>Welcome!</h4>
         </div>
         <div className="inputs">
-          <TextInput
-            inputType="text"
-            label="Username:"
-            id="username"
-            value={textName}
-            handleChange={handleChangeName}
-          />
-          <br />
-          <TextInput
-            inputType="password"
-            label="Password:"
-            id="password"
-            value={textPassword}
-            handleChange={handleChangePassword}
-          />
-          <button onClick={handleChangeInputType} id="eye" type="button">
-            Eye
-          </button>
+          <div className="pass_field">
+            <TextInput
+              inputType="text"
+              label="Username:"
+              id="username"
+              value={textName}
+              handleChange={handleChangeName}
+            />
+          </div>
+          <div className="pass_field">
+            <TextInput
+              inputType="password"
+              label="Password:"
+              id="password"
+              value={textPassword}
+              handleChange={handleChangePassword}
+            />
+            <button
+              className="showPass_btn"
+              onClick={handleChangeInputType}
+              id="eye"
+              type="button"
+            >
+              Eye
+            </button>
+          </div>
         </div>
         <div className="extra-field">
           <div>
