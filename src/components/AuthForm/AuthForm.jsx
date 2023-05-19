@@ -1,25 +1,22 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { submitForm } from "../../store/AuthInputSlice";
 import InputField from "../InputField/InputField";
 
 function AuthForm({ userLabel, passLabel }) {
   const [text, setText] = useState("");
   const [pass, setPass] = useState("");
-  const [userData, setUserData] = useState({});
   const [showPass, changeViewPass] = useState(false);
+  const dispatch = useDispatch();
 
   const toggleViewPass = () => {
     changeViewPass(!showPass);
   };
 
-  const sumbitForm = () => {
-    if (text.trim().length && pass.trim().length) {
-      setUserData({
-        userName: text,
-        userPassword: pass,
-      });
-      setText("");
-      setPass("");
-    }
+  const onSubmit = () => {
+    dispatch(submitForm({ text, pass }));
+    setText("");
+    setPass("");
   };
 
   return (
@@ -30,7 +27,6 @@ function AuthForm({ userLabel, passLabel }) {
         value={text}
         handleInput={setText}
         type="text"
-        userData={userData.userName}
       />
       <InputField
         label={passLabel}
@@ -38,11 +34,10 @@ function AuthForm({ userLabel, passLabel }) {
         handleInput={setPass}
         initialType="password"
         type={showPass ? "text" : "password"}
-        userData={userData.userPassword}
         showPass={showPass}
         toggleViewPass={toggleViewPass}
       />
-      <button type="button" className="auth-btn" onClick={sumbitForm}>
+      <button type="button" className="auth-btn" onClick={onSubmit}>
         войти
       </button>
     </form>

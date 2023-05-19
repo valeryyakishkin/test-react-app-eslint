@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import ShowPassBtn from "../ShowPassBtn/ShowPassBtn";
 
 function InputField({
@@ -8,8 +9,8 @@ function InputField({
   type,
   showPass,
   toggleViewPass,
-  userData,
 }) {
+  const userData = useSelector((state) => state.authInput.inputValues);
   return (
     <div>
       <label className="auth-label">
