@@ -1,3 +1,5 @@
+import ShowPassBtn from "../ShowPassBtn/ShowPassBtn";
+
 function InputField({
   label,
   value,
@@ -21,11 +23,7 @@ function InputField({
           onChange={(e) => setValue(e.target.value)}
         />
         {initialType === "password" ? (
-          <button
-            type="button"
-            className={`showPass_btn ${!showPass ? "eye-off" : "eye"}`}
-            onClick={toggleViewPass}
-          />
+          <ShowPassBtn showPass={showPass} toggleViewPass={toggleViewPass} />
         ) : (
           ""
         )}
