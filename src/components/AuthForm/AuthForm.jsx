@@ -28,14 +28,14 @@ function AuthForm({ userLabel, passLabel }) {
       <InputField
         label={userLabel}
         value={text}
-        setValue={setText}
+        handleInput={setText}
         type="text"
         userData={userData.userName}
       />
       <InputField
         label={passLabel}
         value={pass}
-        setValue={setPass}
+        handleInput={setPass}
         initialType="password"
         type={showPass ? "text" : "password"}
         userData={userData.userPassword}

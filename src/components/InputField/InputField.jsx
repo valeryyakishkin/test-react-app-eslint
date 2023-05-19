@@ -3,7 +3,7 @@ import ShowPassBtn from "../ShowPassBtn/ShowPassBtn";
 function InputField({
   label,
   value,
-  setValue,
+  handleInput,
   initialType,
   type,
   showPass,
@@ -20,7 +20,7 @@ function InputField({
           placeholder={label}
           className="auth-input"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={(e) => handleInput(e.target.value)}
         />
         {initialType === "password" ? (
           <ShowPassBtn showPass={showPass} toggleViewPass={toggleViewPass} />
