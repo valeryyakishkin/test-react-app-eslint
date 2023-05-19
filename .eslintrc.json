@@ -32,11 +32,14 @@
     "react/react-in-jsx-scope": ["off"],
     "react/jsx-props-no-spreading": ["warn"],
     "no-shadow": "off",
+    "jsx-a11y/label-has-associated-control": ["off"],
+    "jsx-a11y/control-has-associated-label": ["off"],
     "prettier/prettier": [
       "error",
       {
         "endOfLine": "auto"
       }
-    ]
+    ],
+    "react/prop-types": ["off"]
   }
 }

@@ -1,0 +1,166 @@
+* {
+  font-family: "Open Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-size: 100%;
+  font-family: inherit;
+  line-height: 1.15;
+  border: none;
+  margin: 0;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: url("./assets/BG_auth.png") center center no-repeat;
+  justify-content: center;
+}
+
+.auth,
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.auth {
+  width: 560px;
+  height: 615px;
+  background-color: #ffffff;
+  padding: 50px 40px;
+  border-radius: 32px;
+  flex-direction: column;
+}
+
+.auth-logo {
+  width: 100px;
+  height: 80px;
+  margin-bottom: 30px;
+}
+
+.auth-link {
+  color: #49aaf5;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.auth-title {
+  color: #49aaf5;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 38px;
+  text-align: center;
+}
+
+.auth-btn {
+  color: #ffffff;
+  background-color: #ff9b00;
+  height: 50px;
+  width: 390px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 800;
+  box-shadow: 0 6px 0 #dc911c;
+  border-radius: 24px;
+  margin-top: 24px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.auth-btn:active {
+  box-shadow: 0 -6px 0 #dc911c;
+  top: 6px;
+}
+
+.auth-input {
+  color: #353535;
+  width: 390px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 8px 16px;
+  border: 2px solid #eaebed;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  margin-top: 8px;
+  outline: none;
+  display: block;
+  & ~ .showPass_btn {
+    &.eye-off {
+      background: url(./assets/eye-off_inactive.png);
+    }
+    &.eye {
+      background: url(./assets/eye_inactive.png);
+    }
+  }
+  &:not(:placeholder-shown) {
+    border-color: #49aaf5;
+    background-color: #f5fbff;
+    & ~ .showPass_btn {
+      &.eye-off {
+        background: url(./assets/eye-off.png);
+      }
+      &.eye {
+        background: url(./assets/eye.png);
+      }
+    }
+  }
+  &:focus {
+    border-color: #49aaf5;
+    background-color: #fff;
+  }
+  &::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+.error .auth-input {
+  background-color: #ffffff;
+  border-color: #ff4c4c;
+  margin-bottom: 8px;
+}
+
+.auth-label {
+  color: #353535;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+}
+
+.errorMessage {
+  font-weight: 400;
+  font-size: 14px;
+  color: #ff4c4c;
+  margin-bottom: 16px;
+}
+
+.showPass_btn {
+  background-color: transparent;
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  right: 16px;
+  bottom: 13px;
+}
