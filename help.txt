@@ -1,0 +1,41 @@
+  function allowEnterName(e) {
+    if (/^[A-Za-z]*$/.test(e.target.value)) {
+      setName(e.target.value);
+    }
+  }
+
+  // Функция обработки ввода символов
+    function allowEnterName(e) {
+      if (e.target.value && /^[A-Za-z._]*$/.test(e.target.value)) {
+        setUsername(e.target.value);
+      }
+    }
+
+
+
+/auth/token/login <- POST
+
+{
+  userame: "admin",
+  password: "admin"
+}
+
+{
+  "auth_token": "token"
+}
+
+
+/auth/token/me <- GET
+Header
+Autarizotion: Token token
+
+{
+  "first_name": "",
+  "last_name": "",
+  "id": 21,
+  "username": "admin"
+}
+
+/auth/token/logout <- POST
+Header
+Autarizotion: Token token
